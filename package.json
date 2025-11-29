@@ -19,10 +19,10 @@
   },
   "peerDependencies": {},
   "scripts": {
-    "build": "bun build ./src/server.ts --outdir ./dist --external \"*\"",
+    "build": "bun build ./src/index.ts --outdir ./dist --external \"*\"",
     "start": "bun src/index.ts",
-    "start:dev": "dotenvx run -f .env.dev -- bun --watch src/server.ts",
-    "start:prod": "dotenvx run -f .env.prod -- bun --watch src/server.ts",
+    "start:dev": "dotenvx run -f .env.dev -- bun --watch src/index.ts",
+    "start:prod": "dotenvx run -f .env.prod -- bun --watch src/index.ts",
     "plop": "plop"
   },
   "dependencies": {
@@ -50,5 +50,8 @@
     "ts-cache-mongoose": "^1.7.5",
     "typescript": "^5.9.3",
     "winston": "^3.18.3"
-  }
+  },"engines": {
+        "node": ">=22"
+    },
+    "packageManager": "bun@1.2.22"
 }
