@@ -6,7 +6,7 @@ const app = express();
 
 let counter = 1;
 
-const NATS_URL = "nats://nats-server:4222";
+const NATS_URL = "nats://main-server:4222";
 const SUBJECT = "orders";
 
 async function runPublisher() {
