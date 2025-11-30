@@ -6,7 +6,7 @@ const app = express();
 
 let counter = 1;
 
-const NATS_URL = "nats://main-server:4222";
+const NATS_URL = process.env.NATS_URL;
 const SUBJECT = "orders";
 
 async function runPublisher() {
@@ -50,6 +50,6 @@ app.get("/send", (req, res, next) => {
   counter++;
 });
 
-app.listen(3000, () => {
-  console.log("listening on port 3000");
+app.listen(parseInt(process.env.port || '3000'), '0.0.0.0', async () => {
+  console.log(`server is running on port ${process.env.port}`);
 });
